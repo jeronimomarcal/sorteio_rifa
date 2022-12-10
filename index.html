@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widdth, initial-scale=1.0">
+        <title>Countdown</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+    <div class="container">
+        <img src="imagens/logo.png" class="logo">
+<!--Aqui inicia o conteúdo-->
+        <div class="content">
+            <p>1° rifa @cutelariamarçal, feita através da Loterias Federal.</p>
+            <h1><span>Sorteio</span> em:</h1>
+<!--Aqui termina o conteúdo-->
+<!--Timer aqui-->
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Dias</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Horas</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutos</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Segundos</span>
+                </div>
+            </div>
+<!--Timer termina aqui-->
+            <br>
+          
+            <a href="https://wa.me/message/5WABX7UWVOBZF1"><button type="button" >Participar da Rifa <img src="imagens/triangle.png"></button>  </a>
+      
+            <a href="regulamento.html"><button type="button" >Regulamento <img src="imagens/triangle.png"></button>  </a>
+        </div>
+        <img src="imagens/rocket.png" class="rocket">
+    </div>
+<!--Aqui Inicia o Script do Timer-->
+    <script>
+        var CountdownDate = new Date("Dec 16, 2022 00:00:00").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = CountdownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+        
+        },1000);
+
+    </script>
+<!--Aqui termina o script do timer-->
+
+</body>
+</html>
